@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ISH Melting Temperature</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+<div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">
+        <img alt="Brand" src="/static/temperature/img/conch.png">
+      </a>
+    </div>
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/temperature/index/">ISH Probe Melting Temperature <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<div class="content">
+
+
+
+    <div class="container-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>ISH Probe Melting Temperature</h3>
+            </div>
+            <h1></h1>
+            <form class='form-horizontal' action="/temperature/get_parameters/" method="post">
+                <div class="container-fluid">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="sequence" class="col-sm-2 control-label">Probe Sequence: </label>
+                        <div class="col-sm-4">
+            <textarea name="sequence" class="form-control" rows="4"
+                      placeholder="Enter your probe sequence here (capital letters)"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="formamide" class="col-sm-2 control-label">Formamide concentration (%): </label>
+                        <div class="col-sm-4">
+                            <input type="text" name="formamide" class="form-control"
+                                   placeholder="Enter formamide concentration percentage in hybridization buffer (only the number e.g. 50)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ssc" class="col-sm-2 control-label">SSC concentration (e.g. 5X): </label>
+                        <div class="col-sm-4">
+                            <input type="text" name="ssc" class="form-control"
+                                   placeholder="Enter the SSC concentration in hybridization buffer (only the number e.g. 5)">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+    <div>
+        {% if submitted %}
+            <div class="container-fluid">
+            <div class="panel panel-default">
+                {% if success %}
+                    <div class="panel-heading">
+                        <h3>Result</h3>
+                    </div>
+                    <div class="container-fluid">
+                        <h4>Your probe's melting temperature is {{ melting_temperature }}. As a rule of thumb, might
+                            want to
+                            try hybridization temperature around 25 °C lower ({{ ideal_temperature }}) first. Then,
+                            anything
+                            15 °C higher or lower might work </h4>
+                    </div>
+                {% elif not success %}
+                    <div class="panel-heading">
+                        <h3>Result</h3>
+                    </div>
+                    <div class="container-fluid">
+                        <h4>Something went wrong processing your data (P.S. make sure you fill in all fields and enter
+                            numerical data
+                            for
+                            'formamide' and 'ssc' fields)</h4>
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+        </div>
+    </div>
+
+   <div class="container-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Notes and References</h4>
+            </div>
+            <div class="container-fluid">
+                <h1></h1>
+                <p>
+                    This tool calculates the melting temperature of RNA-RNA hybrids during in situ hybridization reactions where formamide is used.
+                    The formula used to calculate this was found in 'Immunocytochemistry and In Situ Hybridization in the Biomedical Sciences', Beesley J.E., 2012. </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
