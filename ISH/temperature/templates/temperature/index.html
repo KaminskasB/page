@@ -56,21 +56,21 @@
                 <div class="container-fluid">
                     {% csrf_token %}
                     <div class="form-group">
-                        <label for="sequence" class="col-sm-2 control-label">Probe Sequence: </label>
+                        <label for="sequence" class="col-sm-3 control-label">Probe Sequence: </label>
                         <div class="col-sm-4">
             <textarea name="sequence" class="form-control" rows="4"
                       placeholder="Enter your probe sequence here (capital letters)"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="formamide" class="col-sm-2 control-label">Formamide concentration (%): </label>
+                        <label for="formamide" class="col-sm-3 control-label">Formamide concentration (%): </label>
                         <div class="col-sm-4">
                             <input type="text" name="formamide" class="form-control"
                                    placeholder="Enter formamide concentration percentage in hybridization buffer (only the number e.g. 50)">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="ssc" class="col-sm-2 control-label">SSC concentration (e.g. 5X): </label>
+                        <label for="ssc" class="col-sm-3 control-label">SSC concentration (e.g. 5X): </label>
                         <div class="col-sm-4">
                             <input type="text" name="ssc" class="form-control"
                                    placeholder="Enter the SSC concentration in hybridization buffer (only the number e.g. 5)">
@@ -97,18 +97,18 @@
                         <h3>Result</h3>
                     </div>
                     <div class="container-fluid">
-                        <h4>Your probe's melting temperature is {{ melting_temperature }}. As a rule of thumb, might
+                        <h4>Your probe's melting temperature is {{ melting_temperature }} °C. As a rule of thumb, might
                             want to
                             try hybridization temperature around 25 °C lower ({{ ideal_temperature }}) first. Then,
                             anything
-                            15 °C higher or lower might work </h4>
+                            10 °C higher or lower might work </h4>
                     </div>
                 {% elif not success %}
                     <div class="panel-heading">
                         <h3>Result</h3>
                     </div>
                     <div class="container-fluid">
-                        <h4>Something went wrong processing your data (P.S. make sure you fill in all fields and enter
+                        <h4>Something went wrong processing your input (P.S. make sure you fill in all fields and enter
                             numerical data
                             for
                             'formamide' and 'ssc' fields)</h4>
