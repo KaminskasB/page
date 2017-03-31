@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'wa8%-co*xgb^0)d=@f!fj_v099-^fsac@9hrc8zys%izh0$07*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    'kaminskasb.pythonanywhere.com',
+    #'kaminskasb.pythonanywhere.com',
 ]
 
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'temperature',
     'home',
+    'imagej',
 ]
 
 MIDDLEWARE = [
