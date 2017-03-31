@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ImageJ Batch Processor</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">
+                <img alt="Brand" src="/static/temperature/img/conch.png">
+            </a>
+        </div>
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/temperature/index/">ISH Probe Melting Temperature <span
+                        class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="/imagej/index/">ImageJ Batch Processing</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<div class="content">
+
+
+    <div class="container-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>About ImageJ Batch Processor</h4>
+            </div>
+            <h1></h1>
+            <div class="panel-body">
+                <p>ImageJ Batch Processor is a macro for ImageJ that lets you select a directory and apply changes to
+                    all
+                    images found in that directory (and optionally all subdirectories).</p>
+                <p>By default, it will change brightness/contrast and apply the unmask sharpen filter. However, this is
+                    easily changed by inserting your commands in locations specified by the code comments. You can
+                    learn more about how to use the ImageJ macro language <a
+                            href="https://imagej.nih.gov/ij/developer/macro/macros.html">here</a> (I recommend trying
+                    the
+                    command recorder).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Download and run ImageJ Batch Processor</h4>
+            </div>
+            <h1></h1>
+            <div class="panel-body">
+                <p>Download the macro from this github repository: </p>
+                <p>
+                    <a href="https://github.com/KaminskasB/ImageJ-Batch-Processing-Macro">ImageJ-Batch-Processing-Macro</a>
+                </p>
+                <p>(Click on the green 'Clone or download' button. You are welcome to clone and modify it to your
+                    needs)</p>
+                <p>There are two ways to install it:</p>
+                <p>1. If you want to use it once: go to 'Plugins' -> 'Macros' -> 'Install' -> select the
+                    'BatchProcessor9001.txt' file and open it.</p>
+                <p>2. If you don't want to install it each time you open ImageJ: go to 'Plugins' -> 'Macros' -> 'Startup
+                    Macros', in the 'StartupMacros.fiji.ijm' window copy the contents of the 'BatchProcessor9001.txt'
+                    file at the very bottom, close and save changes. </p>
+                <p>The macro should then be accessible by clicking the yellow cube icon.</p>
+                <h1></h1>
+                <p>Contact me at B.Kaminskas@uea.ac.uk if you need help or have any questions.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

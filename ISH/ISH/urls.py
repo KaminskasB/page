@@ -17,6 +17,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from temperature import views as temperature_views
 from home import views as home_views
+from imagej import views as imagej_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -24,5 +25,7 @@ urlpatterns = [
     url('^$', home_views.index, name='home'),
 
     url(r'^temperature/index/', temperature_views.temperature_index, name='temperature_index'),
-    url(r'^temperature/get_parameters/', temperature_views.get_parameters, name='get_parameters')
+    url(r'^temperature/get_parameters/', temperature_views.get_parameters, name='get_parameters'),
+
+    url(r'^imagej/index/', imagej_views.index, name='imagej_index')
 ]

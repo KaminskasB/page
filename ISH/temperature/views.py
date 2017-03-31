@@ -4,9 +4,6 @@ import re
 import math
 
 
-# Link: https://books.google.co.uk/books?id=dYvfBwAAQBAJ&pg=PA123&dq=melting+temperature+rna+rna+in+situ+hybridization&hl=en&sa=X&ved=0ahUKEwiwqK3FsvvSAhWMAsAKHWsjBUgQ6AEIGjAA#v=onepage&q=melting%20temperature%20rna%20rna%20in%20situ%20hybridization&f=false
-# formula = 79.8 + 18.5 log (molarity monovalent cations) + 0.58 (% GC) + 0.0012 (% GC)2 - 820/(probe length) - 0.35(% formamide)
-
 def temperature_index(request):
     return render(request, 'temperature/index.html')
 
