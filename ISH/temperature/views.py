@@ -17,11 +17,19 @@ def get_parameters(request):
         print ('method is post')
         if form.is_valid():
             print ('form is valid')
-            formamide = form.cleaned_data['formamide']
-            ssc = form.cleaned_data['ssc']
+            dirty_formamide = form.cleaned_data['formamide']
+            decimal_formamide = re.compile(r'[^\d.]+')
+            clean_formamide = float(decimal_formamide.sub('', dirty_formamide))
+            print (clean_formamide)
+
+            dirty_ssc = form.cleaned_data['ssc']
+            decimal_ssc = re.compile(r'[^\d.]+')
+            clean_ssc = float(decimal_ssc.sub('', dirty_ssc))
+
+
             dirty_sequence = form.cleaned_data['sequence']
             clean_sequence = re.sub('[^ACTG]', '', dirty_sequence)  # Removes all characters and whitespace except ACTG
-            melting_temperature = calculate_temperature(formamide, ssc, clean_sequence)
+            melting_temperature = calculate_temperature(clean_formamide, clean_ssc, clean_sequence)
 
             context['melting_temperature'] = melting_temperature
             context['ideal_temperature'] = round(melting_temperature - 25, 1)
