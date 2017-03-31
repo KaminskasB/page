@@ -21,25 +21,49 @@
 
 <body>
 <nav class="navbar navbar-default">
-<div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">
-        <img alt="Brand" src="/static/temperature/img/conch.png">
-      </a>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">
+                <img alt="Brand" src="/static/temperature/img/conch.png">
+            </a>
+        </div>
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/temperature/index/">ISH Probe Melting Temperature <span
+                        class="sr-only">(current)</span></a></li>
+                <li><a href="/imagej/index/">ImageJ Batch Processing</a></li>
+            </ul>
+
+        </div>
     </div>
-
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="/temperature/index/">ISH Probe Melting Temperature <span class="sr-only">(current)</span></a></li>
-        <li><a href="/imagej/index/">ImageJ Batch Processing</a></li>
-      </ul>
-
-    </div>
-  </div>
 </nav>
 
+<div class="content">
 
+
+    <div class="container-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Home</h4>
+            </div>
+            <h1></h1>
+            <div class="panel-body">
+                <p>This page contains a couple of simple tools that automate some tasks I frequently need to do. Feel
+                    free to use them, but be aware they may not be properly tested for all input formats and edge cases
+                    yet and may give you weird results. Use at your own risk!</p>
+                <p><a href="/imagej/index/">ImageJ Batch Processor</a> is a macro for ImageJ that lets you select a
+                    directory and apply changes to all
+                    images found in that directory (and optionally all subdirectories).</p>
+                <p>The <a href="/temperature/index/">ISH probe melting temperature</a> tool calculates RNA-RNA melting
+                    temperature during in situ hybridization.</p>
+                <h1></h1>
+                <p>Contact me at B.Kaminskas@uea.ac.uk if you need help or have any questions.</p>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
