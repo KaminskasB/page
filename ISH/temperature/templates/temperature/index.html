@@ -102,6 +102,7 @@
                             try hybridization temperature around 25 °C lower ({{ ideal_temperature }}) first. Then,
                             anything
                             10 °C higher or lower might work </h4>
+                        <h4 style="color:red">{{ message }}</h4>
                     </div>
                 {% elif not success %}
                     <div class="panel-heading">
@@ -112,6 +113,7 @@
                             numerical data
                             for
                             'formamide' and 'ssc' fields)</h4>
+                        <h4 style="color:red">{{ message }}</h4>
                     </div>
                 {% endif %}
             </div>
